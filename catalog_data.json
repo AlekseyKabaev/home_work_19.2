@@ -1,0 +1,112 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфон",
+      "description": "!+"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Смарт часы",
+      "description": "+!"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Телевизор",
+      "description": "!+!+!"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Планшет",
+      "description": "!+++"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Iphone 15",
+      "description": "!!!!!!!!",
+      "image": "",
+      "category": 1,
+      "price": 15000,
+      "created_at": "2024-07-24T20:27:45.148Z",
+      "updated_at": "2024-07-24T20:27:45.148Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Samsung S24",
+      "description": "!!!!!",
+      "image": "",
+      "category": 1,
+      "price": 12000,
+      "created_at": "2024-07-24T20:27:54.622Z",
+      "updated_at": "2024-07-24T20:27:54.622Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Apple Watch",
+      "description": "+++!",
+      "image": "",
+      "category": 2,
+      "price": 5000,
+      "created_at": "2024-07-24T20:28:07.197Z",
+      "updated_at": "2024-07-24T20:28:07.197Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "LG",
+      "description": null,
+      "image": "",
+      "category": 3,
+      "price": 8000,
+      "created_at": "2024-07-24T20:33:47.468Z",
+      "updated_at": "2024-07-24T20:33:47.468Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Sony",
+      "description": null,
+      "image": "",
+      "category": 3,
+      "price": 10000,
+      "created_at": "2024-07-24T20:35:02.730Z",
+      "updated_at": "2024-07-24T20:35:02.730Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "TCL",
+      "description": null,
+      "image": "",
+      "category": 4,
+      "price": 1000,
+      "created_at": "2024-07-24T20:36:01.084Z",
+      "updated_at": "2024-07-24T20:36:01.084Z"
+    }
+  }
+]
