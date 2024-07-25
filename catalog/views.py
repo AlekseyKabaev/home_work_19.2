@@ -1,8 +1,12 @@
 from django.shortcuts import render
+from catalog.models import Product
 
 
 def home(request):
-    return render(request, "home.html")
+    latest_products = Product.objects.order_by('-updated_at')[:5]
+    for product in latest_products:
+        print(product.name, product.price)
+    return render(request, "home.html", {'latest_products': latest_products})
 
 
 def contacts(request):
