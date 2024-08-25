@@ -30,3 +30,18 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, verbose_name='Продукт', null=True, blank=True)
+    number_version = models.IntegerField(verbose_name='Номер версии')
+    name_version = models.CharField(max_length=100, verbose_name='Название версии')
+    indicates_version = models.BooleanField(default=False, verbose_name='Признак текущей версии')
+
+    class Meta:
+        verbose_name = "Вкрсия"
+        verbose_name_plural = "Версии"
+        ordering = ("id",)
+
+    def __str__(self):
+        return self.name_version
