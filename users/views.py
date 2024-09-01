@@ -53,15 +53,15 @@ class NewPasswordView(PasswordResetView):
     def form_valid(self, form):
         email = form.cleaned_data["email"]
         user = get_object_or_404(User, email=email)
-        if user:
-            new_password = get_random_string(length=8)
-            hashed_password = make_password(new_password)
-            user.password = hashed_password
-            user.save()
-            send_mail(
-                subject="Ваш новый пароль",
-                message=f"'Ваш новый пароль для входа в аккаунт: {new_password}'",
-                from_email=EMAIL_HOST_USER,
-                recipient_list=[user.email]
-            )
-            return redirect('users:login')
+
+        new_password = get_random_string(length=8)
+        hashed_password = make_password(new_password)
+        user.password = hashed_password
+        user.save()
+        send_mail(
+            subject="Ваш новый пароль",
+            message=f"'Ваш новый пароль для входа в аккаунт: {new_password}'",
+            from_email=EMAIL_HOST_USER,
+            recipient_list=[user.email]
+        )
+        return redirect('users:login')
