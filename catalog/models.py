@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 class Category(models.Model):
     name = models.CharField(max_length=100, verbose_name='Название категории')
@@ -22,6 +24,7 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='Стоимость продукта')
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name='Владелец', null=True, blank=True)
 
     class Meta:
         verbose_name = "Продукт"

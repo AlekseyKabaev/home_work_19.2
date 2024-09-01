@@ -189,9 +189,11 @@
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">Магазин техники</h1>
                 <p class="lead text-body-secondary">Список продуктов / товаров</p>
+                {% if user.is_authenticated %}
                 <p>
                     <a href="{% url 'catalog:create' %}" class="btn btn-primary my-2">Создать новый продукт</a>
                 </p>
+                {% endif %}
             </div>
         </div>
     </section>

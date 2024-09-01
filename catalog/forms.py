@@ -17,7 +17,7 @@ class StyleFormMixin:
 class ProductForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'description', 'image', 'category', 'price')
+        exclude = ('created_at ', 'updated_at ', 'owner')
 
     def clean_name(self):
         prohibited_list = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция',
