@@ -17,7 +17,7 @@ class StyleFormMixin:
 class ProductForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
-        exclude = ('created_at ', 'updated_at ', 'owner')
+        exclude = ('created_at', 'updated_at', 'owner')
 
     def clean_name(self):
         prohibited_list = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция',
@@ -34,6 +34,12 @@ class ProductForm(StyleFormMixin, ModelForm):
         if prod_description in prohibited_list:
             raise ValidationError('Запрещенное описание продукта')
         return prod_description
+
+
+class ProductModeratorForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Product
+        fields = ('published', 'description', 'category')
 
 
 class VersionForm(StyleFormMixin, ModelForm):

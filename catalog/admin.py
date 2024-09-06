@@ -1,5 +1,5 @@
 from django.contrib import admin
-from catalog.models import Product, Category, Version
+from catalog.models import Product, Category, Version, User
 
 
 @admin.register(Product)
