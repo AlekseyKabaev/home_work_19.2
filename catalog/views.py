@@ -5,8 +5,9 @@ from django.views.generic import ListView, DetailView, TemplateView, CreateView,
 from django.forms import inlineformset_factory
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from catalog.models import Product, Version
+from catalog.models import Product, Version, Category
 from catalog.forms import ProductForm, VersionForm, ProductModeratorForm
+from catalog.services import get_category_from_cache
 
 
 class ProductListView(ListView):
@@ -91,6 +92,13 @@ class ContactPageView(TemplateView):
             message = request.POST.get('message')
             print(f'You have new message from {name}({phone}): {message}')
         return render(request, "contacts.html")
+
+
+class CategoryListView(ListView):
+    model = Category
+
+    def get_queryset(self):
+        return get_category_from_cache()
 
 # def products_list(request):
 #     products = Product.objects.all()

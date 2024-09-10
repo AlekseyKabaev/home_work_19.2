@@ -192,6 +192,8 @@
                 {% if user.is_authenticated %}
                 <p>
                     <a href="{% url 'catalog:create' %}" class="btn btn-primary my-2">Создать новый продукт</a>
+                    <a href="{% url 'catalog:category_list' %}" class="btn btn-primary my-2">Категории</a>
+                    <a href="{% url 'catalog:products_list' %}" class="btn btn-primary my-2">Назад</a>
                 </p>
                 {% endif %}
             </div>
